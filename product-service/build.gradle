@@ -24,6 +24,13 @@ dependencies {
     implementation platform('org.testcontainers:testcontainers-bom:1.19.3') //import bom
     testImplementation "org.testcontainers:mongodb:1.19.3"
     testImplementation "org.testcontainers:junit-jupiter:1.19.3"
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
 }
 
 test {
